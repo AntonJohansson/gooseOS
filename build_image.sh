@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Builds a bootable 64 bit image, including the
+# kernel elf and bootloader.
+
 BINDIR=bin
 PROJECT=gooseOS.img
 BOOTEFI=bootx64.efi

@@ -15,7 +15,7 @@ pub fn build(b: *Builder) void {
     bootloader_exe.setOutputDir("bin");
     b.default_step.dependOn(&bootloader_exe.step);
 
-    // Build the bootloader
+    // Build the kernel
     const kernel_exe = b.addExecutable("kernel.elf", "kernel/kernel_main.zig");
     kernel_exe.setBuildMode(b.standardReleaseOptions());
     kernel_exe.setTarget(CrossTarget{

@@ -9,6 +9,7 @@ const L = std.unicode.utf8ToUtf16LeStringLiteral;
 const kernel_filename = "kernel.elf";
 var boot_services: *uefi.tables.BootServices = undefined;
 
+// Loads a file from the bootable image
 fn loadFile(filename: [*:0]const u16) ?*uefi.protocols.FileProtocol {
     var status: uefi.Status = undefined;
 
@@ -54,6 +55,7 @@ pub fn main() void {
         return;
     };
 
+    // Load kernel elf file
     var header: elf.Elf64_Ehdr = undefined;
     {
         var file_info_size: u64 = 0;
@@ -63,4 +65,14 @@ pub fn main() void {
         // For some reason the FileProtocol guid and FileInfo guid are the same.
         status = kernel_file.get_info(&uefi.protocols.FileProtocol.guid, &file_info_size, null);
     }
+
+    // Verify kernel elf file
+
+    // Find elf segment where main lies
+
+    // Initialize GOP, framebuffer and font
+
+    // Setup memory map
+
+    // Call kernel main
 }
