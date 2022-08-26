@@ -3,6 +3,8 @@
 # Builds a bootable 64 bit image, including the
 # kernel elf and bootloader.
 
+# Requires mtools 1:4.0.31-1, later version crash for some reason
+
 BINDIR=bin
 PROJECT=gooseOS.img
 BOOTEFI=bootx64.efi

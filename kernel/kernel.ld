@@ -3,21 +3,21 @@ ENTRY(kernel_main)
 
 SECTIONS
 {
-	.text : ALIGN(0x1000)
-	{
-		*(.text)
-	}
-	.data : ALIGN(0x1000)
-	{
-		*(.data)
-	}
-	.rodata : ALIGN(0x1000)
-	{
-		*(.rodata)
-	}
-	.bss : ALIGN(0x1000)
-	{
-		*(COMMON)
-		*(.bss)
-	}
+    . = ALIGN(0x1000);
+
+    .text : {
+        *(.text)
+    }
+    .data : {
+        *(.data)
+    }
+    .rodata : {
+        *(.rodata)
+    }
+    .bss : {
+        *(COMMON)
+        *(.bss)
+    }
+
+    . = ALIGN(0x1000);
 }
