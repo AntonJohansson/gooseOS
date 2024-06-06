@@ -5,13 +5,13 @@
 
 # Requires mtools 1:4.0.31-1, later version crash for some reason
 
-BINDIR=bin
+BINDIR=./zig-out/bin
 PROJECT=gooseOS.img
 BOOTEFI=bootx64.efi
 KERNEL=kernel.elf
 
 dd if=/dev/zero of=$BINDIR/$PROJECT bs=512 count=93750
-mformat -i $BINDIR/$PROJECT -f 1440 ::
+mformat -i $BINDIR/$PROJECT -h 32 -t 32 -n 64 -c 1 ::
 mmd -i $BINDIR/$PROJECT ::/EFI
 mmd -i $BINDIR/$PROJECT ::/EFI/BOOT
 mcopy -i $BINDIR/$PROJECT $BINDIR/$BOOTEFI ::/EFI/BOOT
