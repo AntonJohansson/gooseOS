@@ -166,7 +166,7 @@ pub fn main() void {
     }
 
     // Call kernel main
-    const kernel_main: *const fn (framebuffer: Framebuffer) callconv(.Win64) void = @ptrFromInt(segment + header.entry - load_header.p_vaddr);
+    const kernel_main: *const fn (framebuffer: Framebuffer) void = @ptrFromInt(segment + header.entry - load_header.p_vaddr);
     kernel_main(framebuffer);
 
     while (true) {

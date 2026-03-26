@@ -1,8 +1,9 @@
 OUTPUT_FORMAT(elf64-x86-64)
-ENTRY(kernel_main)
+ENTRY(_start)
 
 SECTIONS
 {
+    . = 0x100000;
     . = ALIGN(0x1000);
 
     .text : {

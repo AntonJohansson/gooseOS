@@ -1,0 +1,26 @@
+== kernel ==
+
+== tools ==
+- [ ] Extract and initialize segments a bit more carefully
+
+== bootloader ==
+- [ ] setup page map kernel side
+- [ ] draw text
+- [ ] bios
+  - [ ] jump to kernel entry point
+  - [ ] Should we be thorough?
+    1. find kernel in fat12 fs
+    2. parse elf header
+    3. map memory for kernel segments
+    4. load kernel into mem.
+    * pros:
+      - gdb debugging + symbols via qemu https://stackoverflow.com/questions/34129461/should-i-make-my-own-os-kernel-elf-or-raw-binary
+      - memory protection for RO/X
+    * cons:
+      - pain
+- [ ] uefi
+- [ ] multiboot
+
+== Resources ==
+* http://www.osdever.net/bkerndev/Docs/isrs.htm
+* https://wiki.osdev.org/I8042_PS/2_Controller#Translation
