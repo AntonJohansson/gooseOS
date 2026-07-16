@@ -37,7 +37,6 @@ const icw1_eoi       = 0x20; // Signal CPU is done processing interrupt
 const icw1_read_irr  = 0x0a; // Read the Interrupt Request Reqister (IRR)
 const icw1_read_isr  = 0x0b; // Read the Interrupt Request Reqister (ISR)
 
-
 const icw4_8086       = 0x01; // 8086/88 mode
 const icw4_auto       = 0x02; // Auto end-of-interrupt, normal otherwise
 const icw4_buf_slave  = 0x08; // buffered mode, slave

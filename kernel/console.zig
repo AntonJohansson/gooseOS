@@ -34,7 +34,7 @@ fn text(str: []const u8, scale: usize, start_x: usize, start_y: usize, color: u3
 }
 
 pub fn log(str: []const u8) void {
-    text(str, 1, margin_left, margin_top + (spacing_line + font.height)*current_line, 0xffffff);
+    text(str, 1, margin_left, margin_top + (spacing_line + font.height)*current_line, 0xff00ff);
     current_line += 1;
 }
 

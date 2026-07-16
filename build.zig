@@ -147,16 +147,10 @@ pub fn build(b: *std.Build) void {
 fn runQemu(b: *std.Build, boot_img: []u8) *std.Build.Step.Run {
     const cmd = b.addSystemCommand(&[_][]const u8{
         "qemu-system-x86_64",
-        "-fda",
-        boot_img,
-        "-d",
-        "int,mmu",
-        "-vga",
-        "virtio",
-        "-m",
-        "256M",
-        "-cpu",
-        "qemu64",
+        "-accel", "tcg",
+        "-fda", boot_img,
+        "-m", "256M",
+        "-cpu", "qemu64",
         "-no-reboot",
     });
     return cmd;
